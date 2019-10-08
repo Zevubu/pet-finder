@@ -4,12 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+    <script type="text/javascript" src="../../keys.js"></script>
     <title>Hello World!</title>
 </head>
 <body>
 
     Hello World!
+
+    <script type="text/javascript">
+        window.onload = function() {
+          L.mapquest.key = mqKey;
+          map.addControl(L.mapquest.control());
+        }
+    </script>
     
+    <div id="map" style="width: 98%; height: 530px;"></div>
+    
+    <script type="text/javascript" src="../javascript/map.js"></script>
     <script src="/homeLogic.js"></script>
 </body>
 </html>
