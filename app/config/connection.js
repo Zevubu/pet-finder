@@ -9,11 +9,8 @@ let connection = mysql.createConnection({
 })
 
 connection.connect(function(err){
-    console.log(`connected to database`)
-})
-
-connection.query("SELECT * FROM found",function(err,data){
-    console.table(data)
+    if(err)throw err;
+    console.log(`Connected to database`)
 })
 
 
