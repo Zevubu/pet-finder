@@ -1,48 +1,65 @@
-var latitude = 39.106667;
-var longitude = -94.676392;
-var boundingBox = `${latitude + .1084}%2c${longitude - .1084}%2c${latitude - .1084}%2c${longitude + .1084}`;
+window.onload = function() {
 
-var locate = function locate() {
-    function success(position) {
-        latitude = position.coords.latitude;
-        longitude = position.coords.longitude;
-        console.log(`Location Set: Lat: ${latitude}, Long: ${longitude}`);
-        boundingBox = `${latitude + .1084}%2c${longitude - .1084}%2c${latitude - .1084}%2c${longitude + .1084}`;
-        // setTimeout(
-            function mapInit() {
-            L.mapquest.key = mqKey;
-    
-            var map = L.mapquest.map('map', {
-              center: [latitude, longitude],
-              layers: L.mapquest.tileLayer('map'),
-              zoom: 11
-            });
-            map.addControl(L.mapquest.control());
+  MQ.geocode().search([
+          'portland or',
+          'flagstaff az',
+          'denver co' ])
+      .on('success', function(e) {
+          var results = e.result,
+              html = '',
+              group = [],
+              features,
+              marker,
+              result,
+              latlng,
+              prop,
+              best,
+              val,
+              map,
+              r,
+              i;
+
+          map = L.map('map', {
+              layers: MQ.mapLayer()
+          });
+
+          for (i = 0; i < results.length; i++) {
+              result = results[i].best;
+              latlng = result.latlng;
+
+              html += '<div style="width:300px; float:left;">';
+      html += '<p><strong>Geocoded Location #' + (i + 1) + '</strong></p>';
+
+      for (prop in result) {
+      r = result[prop];
+
+      if (prop === 'displayLatLng') {
+      val = r.lat + ', ' + r.lng;
+
+      } else if (prop === 'mapUrl') {
+      val = '<br/><img src="' + r + '"/>';
+
+      } else {
+      val = r;
+      }
+
+      html += prop + ' : ' + val + '<br/>';
+      }
+
+      html += '</div>';
+
+      // create POI markers for each location
+          marker = L.marker([ latlng.lat, latlng.lng ])
+                      .bindPopup(result.adminArea5 + ', ' + result.adminArea3);
+
+              group.push(marker);
           }
-          mapInit();
-        //   , 5000)
-    }
 
-    function error() {
-        alert('Unable to access your location');
-        function mapInit() {
-            L.mapquest.key = mqKey;
-    
-            var map = L.mapquest.map('map', {
-              center: [latitude, longitude],
-              layers: L.mapquest.tileLayer('map'),
-              zoom: 5
-            });
-            map.addControl(L.mapquest.control());
-          }
-          mapInit();
-    }
+          // add POI markers to the map and zoom to the features
+          features = L.featureGroup(group).addTo(map);
+          map.fitBounds(features.getBounds());
 
-
-    if (!navigator.geolocation) {
-        alert('Geolocation is not supported by your browser');
-    } else {
-        navigator.geolocation.getCurrentPosition(success, error);
-    }
-};
-locate();
+          // show location information
+          L.DomUtil.get('info').innerHTML = html;
+      });
+  }
