@@ -1,5 +1,4 @@
 let name = document.getElementById('name').value.trim();
-let photo = document.getElementById('photo').value.trim();
 let email = document.getElementById('email').value.trim();
 let phone = parseInt(document.getElementById('phone').value.trim());
 let species = document.getElementById('species').value.trim();
@@ -10,7 +9,6 @@ let feature = document.getElementById('features').value.trim();
 //Create object to store variable values
 let lostPet = {
     contactName: name.value,
-    petPhoto: photo.value,
     contactEmail: email.value,
     contactPhone: phone.value,
     petSpecies: species.value,
@@ -38,7 +36,6 @@ document.getElementById('contact-submit').addEventListener('click', function (ev
     else {
         if (valid == true) {
             console.log(name);
-            console.log(photo);
             console.log(email);
             console.log(phone);
             console.log(species);

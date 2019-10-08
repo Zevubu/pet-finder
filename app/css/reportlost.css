@@ -5,6 +5,7 @@ html {
     bottom: 0;
     /* animation: bg-animation 25s infinite; */
     color: black;
+    background-color: azure;
     text-align: left;
     font-family: 'Quicksand', sans-serif;
 }
@@ -65,22 +66,6 @@ p {
 }
 
 /* begin page */
-.logo {
-    font-size: 36px;
-    font-weight: 900;
-    text-align: left;
-    margin-left: 30px;
-    -webkit-text-stroke: 1px black;
-    color: white;
-    -webkit-filter: drop-shadow(5px 5px 5px #222);
-    filter: drop-shadow(5px 5px 5px #222);
-    text-shadow:
-        3px 3px 0 #000,
-        -1px -1px 0 #000,
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000;
-}
 
 #contact_content {
     display: grid;
@@ -117,6 +102,13 @@ p {
     margin: 0px;
     padding: 0px;
     color: darkgrey;
+    transition: transform .5s ease;
+}
+
+#back:hover {
+    font-size: 18px;
+    transform: scale(1.08);
+    overflow: hidden;
 }
 
 .question {
@@ -124,15 +116,6 @@ p {
     float: left;
     text-align: left;
     margin-bottom: 10px;
-}
-
-.mainparagraph {
-    font-size: 18px;
-    float: left;
-    text-align: left;
-    margin-bottom: 10px;
-    line-height: 25px;
-    margin-bottom: 25px;
 }
 
 #name,
@@ -160,17 +143,13 @@ p {
 }
 
 #name,
-#photo,
-#input1,
-#input2,
-#input3,
-#input4,
-#input5,
-#input6,
-#input7,
-#input8,
-#input9,
-#input10 {
+#email,
+#phone,
+#animal_name,
+#breed,
+#color,
+#features,
+#species {
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -179,16 +158,6 @@ p {
 #photo {
     border: none;
     margin-bottom: 20px;
-}
-
-#survey-img {
-    width: 100%;
-    margin-top:25px;
-    border-radius: 5px;
-    background: #fff;
-    -webkit-box-shadow: 0 10px 6px -6px #777;
-       -moz-box-shadow: 0 10px 6px -6px #777;
-            box-shadow: 0 10px 6px -6px #777;
 }
 
 #survey-name {
@@ -207,8 +176,10 @@ p {
 #contact-submit:hover {
     background-color: turquoise;
     border: 1px solid white;
+    color: black;
     opacity: .5;
     transition: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    transform: scale(1.08);
 }
 
 #contact-submit {
@@ -228,6 +199,7 @@ p {
     text-decoration: none;
     border-radius: 5px;
     font-size: 18px;
+    transition: transform .5s ease;
 }
 
 fieldset {
