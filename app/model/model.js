@@ -1,0 +1,8 @@
+let connection = require("../config/connection.js")
+
+
+
+
+
+module.exports = model
+
