@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,22 +9,51 @@
     <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
     <script type="text/javascript" src="/keys.js"></script>    
     <title>Homepage</title>
-    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
+
 <body>
+    <!-- WRAPPER OF ALL CONTAINERS -->
+    <section class="wrapper-containers">
+        <!-- LOGO -->
+        <header>
+            <h1>Pets Finder</h1>
+        </header>
+
+        <!-- NAVIGATION BAR CONTAINER -->
+        <nav class="con-nav">
+
+        </nav>
+
+        <!-- THE MAP APP GOES HERE -->
+        <section class="con-content">
+
+        </section>
+
+        <!-- FOOTER CONTAINER -->
+        <section class="con-footer">
+
+        </section>
+
+    </section>
+
+
+
 
     Hello World!
     <script type="text/javascript" src="/map.js"></script>
+
     <script type="text/javascript">
-        window.onload = function() {
-          L.mapquest.key = mqKey;
-          map.addControl(L.mapquest.control());
+        window.onload = function () {
+            L.mapquest.key = mqKey;
+            map.addControl(L.mapquest.control());
         }
     </script>
-    
+
     <div id="map" style="width: 98%; height: 530px;"></div>
-  
-   
+
+
     <script src="/homeLogic.js"></script>
 </body>
+
 </html>
