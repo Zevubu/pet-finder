@@ -22,8 +22,9 @@ module.exports = function (app) {
     app.post("/api/lost", function(req, res) {
         console.log(req.body)
 
-        model.addLost("lost", [req.body.name, req.body.type, req.body.color,
-        req.body.description, req.body.photo, req.body.email, req.body.phone],
+        model.addLost("lost", [req.body.userName, req.body.userEmail, req.body.userPhone,
+        req.body.userAddress, req.body.userCity, req.body.userZip, req.body.petPhoto,
+        req.body.petName, req.body.petType, req.body.petColor, req.body.petDescription],
             function(data) {
                 res.json(data)
             })
@@ -34,8 +35,9 @@ module.exports = function (app) {
     app.post("/api/found", function(req, res) {
         console.log(req.body)
 
-        model.addFound("found", [req.body.name, req.body.type, req.body.color,
-        req.body.description, req.body.photo, req.body.email, req.body.phone],
+        model.addFound("found", [req.body.userName, req.body.userEmail, req.body.userPhone,
+            req.body.userAddress, req.body.userCity, req.body.userZip, req.body.petPhoto,
+            req.body.petName, req.body.petType, req.body.petColor, req.body.petDescription],
             function(data) {
                 res.json(data)
             })

@@ -16,42 +16,66 @@ let petColor = document.getElementById("pet-color")
 let petDescription = document.getElementById("pet-description")
 let submitBtn = document.getElementById("report-lost-form")
 
-submitBtn.addEventListener("click",function(){
+// Event listener to construct object from form with validation
+submitBtn.addEventListener("click", function () {
   event.preventDefault();
 
   let valid = true
 
-  if(
+  if (
     (userName.value == "") ||
-    (userName.value == "")
-
-    
-    
-    
-    ){
+    (userEmail.value == "") ||
+    (userPhone.value == "") ||
+    (userAddress.value == "") ||
+    (userCity.value == "") ||
+    (userState.value == "") ||
+    (userZip.value == "") ||
+    (petPhoto.value == "") ||
+    (petName.value = "") ||
+    (petType.value == "") ||
+    (petColor.value == "") ||
+    (petDescription.value == "")
+  ) 
+  {
     valid = false
-
   }
 
+// Make post if valid
+  if (valid) {
 
-  if(valid){
-
-    // Make post
-
+    
+    // Construct Object
     let newLost = {
-      userName : userName.value.trim(),
-      userEmail : userEmail.value.trim(),
-      userPhone : userPhone.value.trim(),
-      userAddress : userAddress.value.trim(),
-      userCity : userCity.value.trim(),
-      userZip : userZip.value.trim(),
-      petPhoto : petPhoto.value.trim(),
-      petName : petName.value.trim(),
-      petType : petType.value.trim(),
-      petColor : petColor.value.trim(),
-      petDescription :petDescription.value.trim(),
-  
+      userName: userName.value.trim(),
+      userEmail: userEmail.value.trim(),
+      userPhone: userPhone.value.trim(),
+      userAddress: userAddress.value.trim(),
+      userCity: userCity.value.trim(),
+      userZip: userZip.value.trim(),
+      petPhoto: petPhoto.value.trim(),
+      petName: petName.value.trim(),
+      petType: petType.value.trim(),
+      petColor: petColor.value.trim(),
+      petDescription: petDescription.value.trim(),
+
     }
+
+    postRequest('/api/lost', newLost)
+    .then(function(data){
+     console.log(data)
+    })
+
+    function postRequest(url, data) {
+        return fetch(url, {
+          credentials: 'same-origin', // 'include', default: 'omit'
+          method: 'POST', // 'GET', 'PUT', 'DELETE', etc.
+          body: JSON.stringify(data), // Coordinate the body type with 'Content-Type'
+          headers: new Headers({
+            'Content-Type': 'application/json'
+          }),
+        })
+        .then(response => response.json())
+      }
 
   }
 
@@ -145,47 +169,3 @@ submitBtn.addEventListener("click",function(){
 // });
 
 
-// Fred's Code
-
-// let name = document.getElementById("pet-name")
-// let type = document.getElementById("pet-type")
-// let color = document.getElementById("pet-color")
-// let description = document.getElementById("pet-description")
-// let photo = document.getElementById("pet-photo")
-// let email = document.getElementById("user-email")
-// let phone = document.getElementById("user-phone")
-// let form = document.getElementById("lost-form")
-
-// form.addEventListener("submit",function(){
-//     event.preventDefault();
-    
-//     let lostPet = {
-//         name : name.value.trim(),
-//         type : type.value.trim(),
-//         color : color.value.trim(),
-//         description : description.value.trim(),
-//         photo : photo.value.trim(),
-//         email : email.value.trim(),
-//         phone : phone.value.trim()
-
-//     }
-//     console.log(lostPet)
-
-//     postRequest('/api/lost', lostPet)
-//     .then(function(data){
-//      console.log(data)
-//     })
-    
-//     function postRequest(url, data) {
-//         return fetch(url, {
-//           credentials: 'same-origin', // 'include', default: 'omit'
-//           method: 'POST', // 'GET', 'PUT', 'DELETE', etc.
-//           body: JSON.stringify(data), // Coordinate the body type with 'Content-Type'
-//           headers: new Headers({
-//             'Content-Type': 'application/json'
-//           }),
-//         })
-//         .then(response => response.json())
-//       }
-
-// })
