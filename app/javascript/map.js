@@ -1,4 +1,4 @@
-let connection = require("../config/connection")
+// let connection = require("../config/connection")
 
 L.mapquest.key = mqKey;
 
@@ -83,10 +83,11 @@ function generateMarkersFeatureGroup(response) {
     for (var i = 0; i < response.results.length; i++) {
         var location = response.results[i].locations[0];
         var locationLatLng = location.latLng;
+        pet = petInfo[i]; 
 
         // Create a marker for each location
         var marker = L.marker(locationLatLng, {icon: L.mapquest.icons.marker()})
-            .bindPopup('this says something'+location.adminArea5 + ', ' + location.adminArea3);
+            .bindPopup(`<img src="${pet.pet_photo}" alt="lost pet" width="40px"> ${pet.pet_name} , ${pet.pet_color} , ${pet.pet_description}`);
             console.log(location.adminArea5 + ', ' + location.adminArea3 + i)
 
         group.push(marker);
