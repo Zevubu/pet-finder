@@ -11,8 +11,11 @@ CREATE TABLE lost
 	pet_color varchar (50) NOT NULL,
     pet_description varchar (250),
 	pet_photo varchar(250) NOT NULL,
-	user_email varchar (250), NOT NULL,
-	user_phone varchar (250), NOT NULL,
+	user_email varchar (250) NOT NULL,
+	user_phone varchar (250) NOT NULL,
+	user_address varchar (250) NOT NULL,
+	user_city varchar (250) NOT NULL,
+	user_zip varchar (250) NOT NULL,
 	PRIMARY KEY (id)
 );
 
@@ -24,8 +27,8 @@ CREATE TABLE found
 	pet_color varchar (50) NOT NULL,
 	pet_description varchar (250),
 	pet_photo varchar(250) NOT NULL,
-	user_email varchar (250), NOT NULL,
-	user_phone varchar (250), NOT NULL,
+	user_email varchar (250) NOT NULL,
+	user_phone varchar (250) NOT NULL,
     longitude varchar (100) NOT NULL,
     lattitude varchar (100) NOT NULL,
 	PRIMARY KEY (id)
