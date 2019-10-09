@@ -1,75 +1,81 @@
-window.onload = function(){
-    L.mapquest.key = mqKey;
-  
-    var latitude = 39.106667;
-    var longitude = -94.676392;
-    var boundingBox;
+L.mapquest.key = mqKey;
 
-    var locate = function locate() {
-        function success(position) {
-            latitude = position.coords.latitude;
-            longitude = position.coords.longitude;
-            console.log(`Location Set: Lat: ${latitude}, Long: ${longitude}`);
-            boundingBox = `${latitude + .1084}%2c${longitude - .1084}%2c${latitude - .1084}%2c${longitude + .1084}`;
-            // setTimeout(
-                
+let petInfo = [
+    {
+        pet_name: "puddled",
+        pet_type:"dog",
+        pet_color: "black",
+        pet_description:"muddy",
+        pet_photo: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&dpr=1&auto=format&fit=crop&w=416&h=312&q=60",
+        user_email: "email@email.com",
+        user_phone:"555-555-5555",
+        address:"830 isabella st",
+        city:"Oakland",
+        state:"CA",
+        zip:"94607"
+    },{
+        pet_name: "puddled",
+        pet_type:"dog",
+        pet_color: "black",
+        pet_description:"muddy",
+        pet_photo: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&dpr=1&auto=format&fit=crop&w=416&h=312&q=60",
+        user_email: "email@email.com",
+        user_phone:"555-555-5555",
+        address:"304 valencia st",
+        city:"San francisco",
+        state:"CA",
+        zip:"94103"
+    },{
+        pet_name: "puddled",
+        pet_type:"dog",
+        pet_color: "black",
+        pet_description:"muddy",
+        pet_photo: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&dpr=1&auto=format&fit=crop&w=416&h=312&q=60",
+        user_email: "email@email.com",
+        user_phone:"555-555-5555",
+        address:"1995 University ave",
+        city:"berkeley",
+        state:"CA",
+        zip:"94707"
+    }
+]
 
-            function mapInit() {
-                
-                var map = L.mapquest.map('map', {
-                center: [latitude, longitude],
-                layers: L.mapquest.tileLayer('map'),
-                zoom: 11
-                });
-                map.addControl(L.mapquest.control());
-                var featureGroup = generateMarkersFeatureGroup(response);
-            
+let pinLocations = ["830 isabella st oakland ca", "304 valencia st san francisco ca", "1995 University ave berkeley ca"]
 
-            // Add markers to the map and zoom to the features
-            featureGroup.addTo(map);
-            map.fitBounds(featureGroup.getBounds());
-            }
-            L.mapquest.geocoding().geocode(['Portland, OR', 'Flagstaff, AZ', 'Denver, CO'], mapInit);
-            function generateMarkersFeatureGroup(response) {
-                var group = [];
-                for (var i = 0; i < response.results.length; i++) {
-                    var location = response.results[i].locations[0];
-                    var locationLatLng = location.latLng;
+// Geocode three locations, then call the createMap callback
+L.mapquest.geocoding().geocode(pinLocations, createMap);
 
-                    // Create a marker for each location
-                    var marker = L.marker(locationLatLng, {icon: L.mapquest.icons.marker()})
-                    .bindPopup(location.adminArea5 + ', ' + location.adminArea3);
-
-                    group.push(marker);
-                }
-                return L.featureGroup(group);
-            }
-        
-            
-            }
-        }
-
-        function error() {
-            alert('Unable to access your location');
-            function mapInit() {
-                L.mapquest.key = mqKey;
-        
-                var map = L.mapquest.map('map', {
-                center: [latitude, longitude],
-                layers: L.mapquest.tileLayer('map'),
-                zoom: 5
-                });
-                map.addControl(L.mapquest.control());
-            }
-            mapInit();
-        }
-
-
-        if (!navigator.geolocation) {
-            alert('Geolocation is not supported by your browser');
-        } else {
-            navigator.geolocation.getCurrentPosition(success, error);
-        }
+function createMap(error, response) {
+    if(error){
+        console.log(error);
     };
-    locate();
-};
+    // Initialize the Map
+    var map = L.mapquest.map('map', {
+    layers: L.mapquest.tileLayer('map'),
+    center: [0, 0],
+    zoom: 12
+    });
+
+    // Generate the feature group containing markers from the geocoded locations
+    var featureGroup = generateMarkersFeatureGroup(response);
+
+    // Add markers to the map and zoom to the features
+    featureGroup.addTo(map);
+    map.fitBounds(featureGroup.getBounds());
+}
+
+function generateMarkersFeatureGroup(response) {
+    var group = [];
+    for (var i = 0; i < response.results.length; i++) {
+        var location = response.results[i].locations[0];
+        var locationLatLng = location.latLng;
+
+        // Create a marker for each location
+        var marker = L.marker(locationLatLng, {icon: L.mapquest.icons.marker()})
+            .bindPopup('this says something'+location.adminArea5 + ', ' + location.adminArea3);
+            console.log(location.adminArea5 + ', ' + location.adminArea3 + i)
+
+        group.push(marker);
+    }
+    return L.featureGroup(group);
+}
