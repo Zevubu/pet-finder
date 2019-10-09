@@ -6,26 +6,32 @@ USE petFinder_db;
 CREATE TABLE lost
 (
 	id int NOT NULL AUTO_INCREMENT,
-	pet_name varchar(50) NOT NULL,
-    pet_type varchar(50) NOT NULL,
-	pet_color varchar (50) NOT NULL,
-    pet_description varchar (250),
-	user_email varchar (250), NOT NULL,
-	user_phone varchar (250), NOT NULL,
+	user_name varchar(50) NOT NULL,
+    user_email varchar(50) NOT NULL,
+	user_phone varchar (50) NOT NULL,
+    user_address varchar (250),
+	user_city varchar(250) NOT NULL,
+	user_zip varchar (250) NOT NULL,
+	pet_photo varchar (250) NOT NULL,
+	pet_name varchar (250) NOT NULL,
+	pet_color varchar (250) NOT NULL,
+	pet_description varchar (250) NOT NULL,
 	PRIMARY KEY (id)
 );
 
 CREATE TABLE found
 (
 	id int NOT NULL AUTO_INCREMENT,
-	pet_name varchar(50) NOT NULL,
-    pet_type varchar(50) NOT NULL,
-	pet_color varchar (50) NOT NULL,
-	pet_description varchar (250),
-	user_email varchar (250), NOT NULL,
-	user_phone varchar (250), NOT NULL,
-    longitude varchar (100) NOT NULL,
-    lattitude varchar (100) NOT NULL,
+	user_name varchar(50) NOT NULL,
+    user_email varchar(50) NOT NULL,
+	user_phone varchar (50) NOT NULL,
+    user_address varchar (250),
+	user_city varchar(250) NOT NULL,
+	user_zip varchar (250) NOT NULL,
+	pet_photo varchar (250) NOT NULL,
+	pet_name varchar (250) NOT NULL,
+	pet_color varchar (250) NOT NULL,
+	pet_description varchar (250) NOT NULL,
 	PRIMARY KEY (id)
 );
 

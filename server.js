@@ -13,7 +13,7 @@ app.use(express.static(__dirname + "/app/images"));
 
 
 
-// require("./app/controller/apiRoutes.js")(app);
+require("./app/controller/apiRoutes.js")(app);
 require("./app/controller/htmlRoutes.js")(app)
 
 app.listen(port,function(){
