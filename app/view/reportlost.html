@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Report Lost</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <link rel="stylesheet" type="text/css" href="./reportlost.css">
 </head>
 
@@ -15,65 +18,66 @@
         </div>
         <div class="two"></div>
         <div class="three">
-            <a id="back" href="/">go back</a>
+
             <br>
             <h3>CONTACT INFO</h3>
             <div class="form-group">
                 <p>Full Name</p>
-                <input id="name" type="text" class="form-control" placeholder="ex: Jane Doe">
+                <input id="user-name" type="text" class="form-control" placeholder="Jane Doe">
             </div>
             <div class="form-group">
                 <p>Email</p>
-                <input id="user-email" type="text" class="form-control" placeholder="ex: janedoe@gmail.com">
+                <input id="user-email" type="text" class="form-control" placeholder="janedoe@gmail.com">
             </div>
             <div class="form-group">
                 <p>Phone</p>
-                <input id="user-phone" type="text" class="form-control" placeholder="ex: 510-123-1234">
+                <input id="user-phone" type="text" class="form-control" placeholder="510-123-1234">
             </div>
+
+            <div class="form-group">
+                <p>Address</p>
+                <input id="user-address" type="text" class="form-control" placeholder="2691 Benvenue Avenue">
+            </div>
+
+            <div class="form-group">
+                <p>City</p>
+                <input id="user-city" type="text" class="form-control" placeholder="Berkeley">
+            </div>
+
+            <div class="form-group">
+                <p>State</p>
+                <input id="user-state" type="text" class="form-control" placeholder="California">
+            </div>
+
+            <div class="form-group">
+                    <p>Zip</p>
+                    <input id="user-zip" type="text" class="form-control" placeholder="94705">
+                </div>
+
+            <hr>
             <h3>ANIMAL DESCRIPTION</h3>
-            <p>Image Upload</p>
+            <p>Image link</p>
             <div class="form-group">
-                <input id="photo" type="text" class="form-control" placeholder="Link to Pet Photo (Required)">
+                <input id="pet-photo" type="text" class="form-control" placeholder="Link to Pet Photo (Required)">
             </div>
             <div class="form-group">
-                <p>Pet Name (If applicable)</p>
-                <input id="pet-name" type="text" class="form-control" placeholder="Check tags, otherwise state 'N/A'">
+                <p>Pet Name</p>
+                <input id="pet-name" type="text" class="form-control" placeholder="examples: Ruby, Max">
             </div>
             <div class="form-group">
                 <p>Pet Type</p>
-                <input id="pet-type" type="text" class="form-control" placeholder="ex: Corgi, Kai Ken">
+                <input id="pet-type" type="text" class="form-control" placeholder="Examples: Cat,Dog">
             </div>
             <p>Pet Color(s)</p>
             <div class="form-group">
-                <input id="pet-color" type="text" class="form-control" placeholder="ex: Black, White Spots">
+                <input id="pet-color" type="text" class="form-control" placeholder="Black">
             </div>
-            <p>Pet Descritption</p>
+            <p>Pet Description</p>
             <div class="form-group">
-                <input id="pet-description" type="text" class="form-control"
-                    placeholder="ex: spayed/neutered, micro-chipped, declawed">
+                <textarea rows="4" cols="50" id="pet-description" type="text" class="form-control"
+                    placeholder="examples: spayed/neutered, micro-chipped, declawed"></textarea>
             </div>
-            <h3>LOCATION DETAILS</h3>
-            <p>Address</p>
-            <div class="form-group">
-                <input id="address" type="text" class="form-control"
-                    placeholder="ex: 123 4th Street">
-            </div>
-            <p>City</p>
-            <div class="form-group">
-                <input id="city" type="text" class="form-control"
-                    placeholder="ex: Oakland, SanFrancisco">
-            </div>
-            <p>State</p>
-            <div class="form-group">
-                <input id="state" type="text" class="form-control"
-                    placeholder="ex: CA,TX">
-            </div>
-            <p>Zip Code</p>
-            <div class="form-group">
-                <input id="zip" type="text" class="form-control"
-                    placeholder="ex: 94609">
-            </div>
-            <button name="submit" type="submit" id="report-lost-form" data-submit="...Sending">
+            <button class="btn btn-primary" name="submit" type="submit" id="report-lost-form" data-submit="...Sending">
                 SUBMIT
             </button>
             <p id='response'></p>
