@@ -126,6 +126,10 @@ p {
 #pet-type,
 #pet-color,
 #pet-description,
+#address,
+#city,
+#state,
+#zip,
 #text-input {
     display: grid;
     grid-column: 1/5;
@@ -149,6 +153,10 @@ p {
 #pet-name,
 #pet-type,
 #pet-color,
+#address,
+#city,
+#state,
+#zip,
 #pet-description {
     margin-top: 10px;
     margin-bottom: 10px;
