@@ -1,6 +1,33 @@
-// let connection = require("../config/connection")
+
+let flState = "lost"
 
 L.mapquest.key = mqKey;
+
+getRequest('/api/lost')
+.then(function(data){
+ console.log(`api lost data: ${data}`)
+})
+
+function getRequest(url, data) {
+    return fetch(url, {
+      credentials: 'same-origin', // 'include', default: 'omit'
+      method: 'GET', // 'GET', 'PUT', 'DELETE', etc.
+      body: JSON.stringify(data), // Coordinate the body type with 'Content-Type'
+      headers: new Headers({
+        'Content-Type': 'application/json'
+      }),
+    })
+    .then(function(response){
+        
+        console.log("json response " + JSON.stringify(response));
+        console.log("pulled resonse " + response)
+
+
+        
+    });
+
+};
+// searchLost
 
 // pet info with dummy data
 let petInfo = [
@@ -8,10 +35,10 @@ let petInfo = [
         user_name:"Tom",
         user_email: "email@email.com",
         user_phone:"555-555-5555",
-        address:"830 isabella st",
-        city:"Oakland",
-        state:"CA",
-        zip:"94607",
+        user_address:"830 isabella st",
+        user_city:"Oakland",
+        user_state:"CA",
+        user_zip:"94607",
         pet_photo: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&dpr=1&auto=format&fit=crop&w=416&h=312&q=60",
         pet_name: "puddled",
         pet_color: "black",
@@ -21,10 +48,10 @@ let petInfo = [
         user_name:"Tom",
         user_email: "email@email.com",
         user_phone:"555-555-5555",
-        address:"304 valencia st",
-        city:"San francisco",
-        state:"CA",
-        zip:"94103",
+        user_address:"304 valencia st",
+        user_city:"San francisco",
+        user_state:"CA",
+        user_zip:"94103",
         pet_photo: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&dpr=1&auto=format&fit=crop&w=416&h=312&q=60",
         pet_name: "puddled",
         pet_color: "black",
@@ -33,10 +60,10 @@ let petInfo = [
         user_name:"Tom",
         user_email: "email@email.com",
         user_phone:"555-555-5555",
-        address:"1995 University ave",
-        city:"berkeley",
-        state:"CA",
-        zip:"94707",
+        user_address:"1995 University ave",
+        user_city:"berkeley",
+        user_state:"CA",
+        user_zip:"94707",
         pet_photo: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&dpr=1&auto=format&fit=crop&w=416&h=312&q=60",
         pet_name: "puddled",
         pet_color: "black",
@@ -49,7 +76,7 @@ let pinLocations = []
 
 for(let p = 0; p < petInfo.length; p++){
     let pet = petInfo[p]
-    let petAddress = `${pet.address} ${pet.city} ${pet.state} ${pet.zip}`
+    let petAddress = `${pet.user_address} ${pet.user_city} ${pet.user_state} ${pet.user_zip}`
     console.log(petAddress);
     pinLocations.push(petAddress);
 };
