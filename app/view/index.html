@@ -13,17 +13,30 @@
 <body>
     <!-- WRAPPER OF ALL CONTAINERS -->
     <section class="wrapper-containers">
+
         <!-- LOGO -->
-        <header>
+        <header class="con-header">
             <h1>Pets Finder</h1>
         </header>
 
         <!-- NAVIGATION BAR CONTAINER -->
         <nav class="con-nav">
-
+            <section></section> <!--empty left side nav section -->
+            <section><a href="">Home</a></section>
+            <section><a href="">Report Lost Pet</a></section>
+            <section><a href="">Report Found Pet</a></section>
+            <section><a href="">View Lost Pets</a></section>
+            <section><a href="">View Found Pets</a></section>
+            <section></section> <!--empty right side nav section -->
         </nav>
 
-        <!-- THE MAP APP GOES HERE -->
+        <!-- ADS CONTAINER -->
+        <section class="ads">
+            <img src="/app/img/" alt="">
+        </section>
+
+
+        <!--  CONTENT CONTAINER - THE MAP APP GOES HERE -->
         <section class="con-content">
 
         </section>
@@ -36,13 +49,11 @@
     </section>
 
 
-
-
-    Hello World!
     <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
-<link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
 
     <!-- <img src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&dpr=1&auto=format&fit=crop&w=416&h=312&q=60"> -->
+
     <script type="text/javascript" src="/map.js"></script>
 
     <!-- <script type="text/javascript">
@@ -54,7 +65,6 @@
 
     <div id="map" style="width: 98%; height: 530px;"></div>
     <div id="info"></div>
-
     <script src="/homeLogic.js"></script>
 </body>
 
