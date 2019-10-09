@@ -121,6 +121,7 @@ p {
 #name,
 #user-email,
 #user-phone,
+#photo,
 #pet-name,
 #pet-type,
 #pet-color,
@@ -144,6 +145,7 @@ p {
 #name,
 #user-email,
 #user-phone,
+#photo,
 #pet-name,
 #pet-type,
 #pet-color,
@@ -182,7 +184,7 @@ p {
 
 #report-lost-form {
     display: grid;
-    font-size: 24px;
+    font-size: 1.5vw;
     color: white;
     background-color: darkgrey;
     border: 1px solid darkgrey;
@@ -196,7 +198,6 @@ p {
     letter-spacing: .1em;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 18px;
     transition: transform .5s ease;
 }
 

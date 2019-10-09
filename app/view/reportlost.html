@@ -18,7 +18,6 @@
             <a id="back" href="/">go back</a>
             <br>
             <h3>CONTACT INFO</h3>
-
             <div class="form-group">
                 <p>Full Name</p>
                 <input id="name" type="text" class="form-control" placeholder="Jane Doe">
@@ -34,21 +33,22 @@
             <hr>
             <h3>ANIMAL DESCRIPTION</h3>
             <p>Image Upload</p>
-            <input id="image-upload" type="file" onchange="SavePhoto(this)" >
-
+            <div class="form-group">
+                <input id="photo" type="text" class="form-control" placeholder="Link to Pet Photo (Required)">
+            </div>
             <div class="form-group">
                 <p>Pet Name</p>
                 <input id="pet-name" type="text" class="form-control" placeholder="examples: Ruby, Max">
             </div>
             <div class="form-group">
-                <p>Animal Species</p>
+                <p>Pet Type</p>
                 <input id="pet-type" type="text" class="form-control" placeholder="Animal Species">
             </div>
-            <p>Predominant Color(s)</p>
+            <p>Pet Color(s)</p>
             <div class="form-group">
                 <input id="pet-color" type="text" class="form-control" placeholder="Black">
             </div>
-            <p>Identifying Markings and Features</p>
+            <p>Pet Descritption</p>
             <div class="form-group">
                 <input id="pet-description" type="text" class="form-control"
                     placeholder="examples: spayed/neutered, micro-chipped, declawed">
@@ -61,7 +61,7 @@
         <div class="four"> </div>
         <div class="five"> </div>
     </div>
-    <script src="/reportLostLogic.js"></script>
 </body>
+<script src="/reportLostLogic.js"></script>
 
 </html>
