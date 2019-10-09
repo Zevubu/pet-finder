@@ -1,46 +1,60 @@
+let connection = require("../config/connection")
+
 L.mapquest.key = mqKey;
 
+// pet info with dummy data
 let petInfo = [
     {
-        pet_name: "puddled",
-        pet_type:"dog",
-        pet_color: "black",
-        pet_description:"muddy",
-        pet_photo: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&dpr=1&auto=format&fit=crop&w=416&h=312&q=60",
+        user_name:"Tom",
         user_email: "email@email.com",
         user_phone:"555-555-5555",
         address:"830 isabella st",
         city:"Oakland",
         state:"CA",
-        zip:"94607"
-    },{
-        pet_name: "puddled",
-        pet_type:"dog",
-        pet_color: "black",
-        pet_description:"muddy",
+        zip:"94607",
         pet_photo: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&dpr=1&auto=format&fit=crop&w=416&h=312&q=60",
+        pet_name: "puddled",
+        pet_color: "black",
+        pet_description:"muddy"
+        
+    },{
+        user_name:"Tom",
         user_email: "email@email.com",
         user_phone:"555-555-5555",
         address:"304 valencia st",
         city:"San francisco",
         state:"CA",
-        zip:"94103"
-    },{
-        pet_name: "puddled",
-        pet_type:"dog",
-        pet_color: "black",
-        pet_description:"muddy",
+        zip:"94103",
         pet_photo: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&dpr=1&auto=format&fit=crop&w=416&h=312&q=60",
+        pet_name: "puddled",
+        pet_color: "black",
+        pet_description:"muddy"
+    },{
+        user_name:"Tom",
         user_email: "email@email.com",
         user_phone:"555-555-5555",
         address:"1995 University ave",
         city:"berkeley",
         state:"CA",
-        zip:"94707"
+        zip:"94707",
+        pet_photo: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&dpr=1&auto=format&fit=crop&w=416&h=312&q=60",
+        pet_name: "puddled",
+        pet_color: "black",
+        pet_description:"muddy"
+        
     }
 ]
 
-let pinLocations = ["830 isabella st oakland ca", "304 valencia st san francisco ca", "1995 University ave berkeley ca"]
+let pinLocations = []
+
+for(let p = 0; p < petInfo.length; p++){
+    let pet = petInfo[p]
+    let petAddress = `${pet.address} ${pet.city} ${pet.state} ${pet.zip}`
+    console.log(petAddress);
+    pinLocations.push(petAddress);
+};
+
+
 
 // Geocode three locations, then call the createMap callback
 L.mapquest.geocoding().geocode(pinLocations, createMap);
