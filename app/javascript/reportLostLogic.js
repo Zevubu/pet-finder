@@ -7,6 +7,10 @@ let petName = document.getElementById('pet-name').value.trim();
 let type = document.getElementById('pet-type').value.trim();
 let color = document.getElementById('pet-color').value.trim();
 let description = document.getElementById('pet-description').value.trim();
+let address = document.getElementById('address').value.trim();
+let city = document.getElementById('city').value.trim();
+let state = document.getElementById('state').value.trim();
+let zip = parseInt(document.getElementById('zip').value.trim());
 
 //Create on-click event listener for submit button
 document.getElementById('report-lost-form').addEventListener('click', function (event) {
@@ -20,7 +24,11 @@ document.getElementById('report-lost-form').addEventListener('click', function (
         petName: document.getElementById('pet-name').value.trim(),
         petType: document.getElementById('pet-type').value.trim(),
         petColor: document.getElementById('pet-color').value.trim(),
-        petDescription: document.getElementById('pet-description').value.trim()
+        petDescription: document.getElementById('pet-description').value.trim(),
+        address: document.getElementById('address').value.trim(),
+        city: document.getElementById('city').value.trim(),
+        state: document.getElementById('state').value.trim(),
+        zip: parseInt(document.getElementById('zip').value.trim())
     }
    
     // form logic 
@@ -33,18 +41,25 @@ document.getElementById('report-lost-form').addEventListener('click', function (
         document.getElementById('pet-name').value === '' ||
         document.getElementById('pet-type').value === '' ||
         document.getElementById('pet-color').value === '' ||
-        document.getElementById('pet-description').value === ''
+        document.getElementById('pet-description').value === '' ||
+        document.getElementById('address').value === '' ||
+        document.getElementById('city').value === '' ||
+        document.getElementById('state').value === '' ||
+        document.getElementById('zip').value === ''
     ){
         valid = false;
         alert('All fields must contain a values');
     }
     else
+    if (isNaN(document.getElementById('user-phone')) || isNaN(document.getElementById('zip'))) {
+        alert('Error: make sure phone and zip code fields contain only numbers.');
+    }
     {
         console.log(valid);
         console.log(lostPet);
         // alert('Thank you for your post.Please check your email for frequent updates');
     }
-
+    // create post request
     postRequest('/api/lost', lostPet)
         .then(function () {
             document.getElementById('response').innerHTML = 'Thank you for your post.Please check your email for frequent updates';
