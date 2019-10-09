@@ -39,19 +39,18 @@
 
 
     Hello World!
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
-    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=mqKey"></script>
-    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-geocoding.js?key=mqKey"></script>
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+<link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+
 
     <script type="text/javascript" src="/map.js"></script>
 
-    <!-- <script type="text/javascript">
+    <script type="text/javascript">
         window.onload = function () {
             L.mapquest.key = mqKey;
             map.addControl(L.mapquest.control());
         }
-    </script> -->
+    </script>
 
     <div id="map" style="width: 98%; height: 530px;"></div>
     <div id="info"></div>

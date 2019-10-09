@@ -1,65 +1,75 @@
-window.onload = function() {
+window.onload = function(){
+    L.mapquest.key = mqKey;
+  
+    var latitude = 39.106667;
+    var longitude = -94.676392;
+    var boundingBox;
 
-  MQ.geocode().search([
-          'portland or',
-          'flagstaff az',
-          'denver co' ])
-      .on('success', function(e) {
-          var results = e.result,
-              html = '',
-              group = [],
-              features,
-              marker,
-              result,
-              latlng,
-              prop,
-              best,
-              val,
-              map,
-              r,
-              i;
+    var locate = function locate() {
+        function success(position) {
+            latitude = position.coords.latitude;
+            longitude = position.coords.longitude;
+            console.log(`Location Set: Lat: ${latitude}, Long: ${longitude}`);
+            boundingBox = `${latitude + .1084}%2c${longitude - .1084}%2c${latitude - .1084}%2c${longitude + .1084}`;
+            // setTimeout(
+                
 
-          map = L.map('map', {
-              layers: MQ.mapLayer()
-          });
+            function mapInit() {
+                
+                var map = L.mapquest.map('map', {
+                center: [latitude, longitude],
+                layers: L.mapquest.tileLayer('map'),
+                zoom: 11
+                });
+                map.addControl(L.mapquest.control());
+                var featureGroup = generateMarkersFeatureGroup(response);
+            
 
-          for (i = 0; i < results.length; i++) {
-              result = results[i].best;
-              latlng = result.latlng;
+            // Add markers to the map and zoom to the features
+            featureGroup.addTo(map);
+            map.fitBounds(featureGroup.getBounds());
+            }
+            L.mapquest.geocoding().geocode(['Portland, OR', 'Flagstaff, AZ', 'Denver, CO'], mapInit);
+            function generateMarkersFeatureGroup(response) {
+                var group = [];
+                for (var i = 0; i < response.results.length; i++) {
+                    var location = response.results[i].locations[0];
+                    var locationLatLng = location.latLng;
 
-              html += '<div style="width:300px; float:left;">';
-      html += '<p><strong>Geocoded Location #' + (i + 1) + '</strong></p>';
+                    // Create a marker for each location
+                    var marker = L.marker(locationLatLng, {icon: L.mapquest.icons.marker()})
+                    .bindPopup(location.adminArea5 + ', ' + location.adminArea3);
 
-      for (prop in result) {
-      r = result[prop];
+                    group.push(marker);
+                }
+                return L.featureGroup(group);
+            }
+        
+            
+            }
+        }
 
-      if (prop === 'displayLatLng') {
-      val = r.lat + ', ' + r.lng;
+        function error() {
+            alert('Unable to access your location');
+            function mapInit() {
+                L.mapquest.key = mqKey;
+        
+                var map = L.mapquest.map('map', {
+                center: [latitude, longitude],
+                layers: L.mapquest.tileLayer('map'),
+                zoom: 5
+                });
+                map.addControl(L.mapquest.control());
+            }
+            mapInit();
+        }
 
-      } else if (prop === 'mapUrl') {
-      val = '<br/><img src="' + r + '"/>';
 
-      } else {
-      val = r;
-      }
-
-      html += prop + ' : ' + val + '<br/>';
-      }
-
-      html += '</div>';
-
-      // create POI markers for each location
-          marker = L.marker([ latlng.lat, latlng.lng ])
-                      .bindPopup(result.adminArea5 + ', ' + result.adminArea3);
-
-              group.push(marker);
-          }
-
-          // add POI markers to the map and zoom to the features
-          features = L.featureGroup(group).addTo(map);
-          map.fitBounds(features.getBounds());
-
-          // show location information
-          L.DomUtil.get('info').innerHTML = html;
-      });
-  }
+        if (!navigator.geolocation) {
+            alert('Geolocation is not supported by your browser');
+        } else {
+            navigator.geolocation.getCurrentPosition(success, error);
+        }
+    };
+    locate();
+};
