@@ -51,9 +51,9 @@ document.getElementById('report-lost-form').addEventListener('click', function (
         alert('All fields must contain a values');
     }
     else
-    if (isNaN(document.getElementById('user-phone')) || isNaN(document.getElementById('zip'))) {
-        alert('Error: make sure phone and zip code fields contain only numbers.');
-    }
+    // if (isNaN(document.getElementById('user-phone')) || isNaN(document.getElementById('zip'))) {
+    //     alert('Error: make sure phone and zip code fields contain only numbers.');
+    // }
     {
         console.log(valid);
         console.log(lostPet);
