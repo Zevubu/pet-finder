@@ -1,59 +1,54 @@
+// Declare gloabal variables
 let name = document.getElementById('name').value.trim();
-let email = document.getElementById('email').value.trim();
-let phone = parseInt(document.getElementById('phone').value.trim());
-let species = document.getElementById('species').value.trim();
-let breed = document.getElementById('breed').value.trim();
-let color = document.getElementById('color').value.trim();
-let feature = document.getElementById('features').value.trim();
-
-//Create object to store variable values
-let lostPet = {
-    contactName: name.value,
-    contactEmail: email.value,
-    contactPhone: phone.value,
-    petSpecies: species.value,
-    petBreed: breed.value,
-    petColor: color.value,
-    feature: feature.value
-}
+let email = document.getElementById('user-email').value.trim();
+let phone = parseInt(document.getElementById('user-phone').value.trim());
+let photo = document.getElementById('photo').value.trim();
+let petName = document.getElementById('pet-name').value.trim();
+let type = document.getElementById('pet-type').value.trim();
+let color = document.getElementById('pet-color').value.trim();
+let description = document.getElementById('pet-description').value.trim();
 
 //Create on-click event listener for submit button
-document.getElementById('contact-submit').addEventListener('click', function (event) {
+document.getElementById('report-lost-form').addEventListener('click', function (event) {
     event.preventDefault();
-    //form validation
+
+    let lostPet = {
+        userName: document.getElementById('name').value.trim(),
+        userEmail: document.getElementById('user-email').value.trim(),
+        userPhone: parseInt(document.getElementById('user-phone').value.trim()),
+        petPhoto: document.getElementById('photo').value.trim(),
+        petName: document.getElementById('pet-name').value.trim(),
+        petType: document.getElementById('pet-type').value.trim(),
+        petColor: document.getElementById('pet-color').value.trim(),
+        petDescription: document.getElementById('pet-description').value.trim()
+    }
+   
+    // form logic 
     let valid = true;
 
-    if (name === '' ||
-        email === '' ||
-        phone === '' ||
-        (isNaN(phone == true))
-        || species === '' ||
-        breed === '' ||
-        color === '' ||
-        features === '') {
+    if (document.getElementById('name').value === '' ||
+        document.getElementById('user-email').value === '' ||
+        document.getElementById('user-phone').value === '' ||
+        document.getElementById('photo').value === '' ||
+        document.getElementById('pet-name').value === '' ||
+        document.getElementById('pet-type').value === '' ||
+        document.getElementById('pet-color').value === '' ||
+        document.getElementById('pet-description').value === ''
+    ){
         valid = false;
+        alert('All fields must contain a values');
     }
-    else {
-        if (valid == true) {
-            console.log(name);
-            console.log(email);
-            console.log(phone);
-            console.log(species);
-            console.log(breed);
-            console.log(color);
-            console.log(feature);
-        }
-
-        else {
-            alert('Error: all fields are required');
-        }
-
+    else
+    {
+        console.log(valid);
+        console.log(lostPet);
+        // alert('Thank you for your post.Please check your email for frequent updates');
     }
 
     postRequest('/api/lost', lostPet)
         .then(function () {
-            document.getElementById('response').innerHTML = 'Thank you for your post.Please check your email for frequesnt updates';
-
+            document.getElementById('response').innerHTML = 'Thank you for your post.Please check your email for frequent updates';
+            console.log(data);
         });
 
     function postRequest(url, data) {

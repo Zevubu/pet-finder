@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <title>Report Lost</title>
     <link rel="stylesheet" type="text/css" href="./reportlost.css">
 </head>
+
 <body>
     <div class='background' id="content">
         <div class="one">
@@ -16,44 +18,42 @@
             <a id="back" href="/">go back</a>
             <br>
             <h3>CONTACT INFO</h3>
-
             <div class="form-group">
                 <p>Full Name</p>
                 <input id="name" type="text" class="form-control" placeholder="Jane Doe">
             </div>
             <div class="form-group">
                 <p>Email</p>
-                <input id="email" type="email" class="form-control" placeholder="janedoe@gmail.com">
+                <input id="user-email" type="text" class="form-control" placeholder="janedoe@gmail.com">
             </div>
             <div class="form-group">
                 <p>Phone</p>
-                <input id="phone" type="text" class="form-control" placeholder="510-123-1234">
+                <input id="user-phone" type="text" class="form-control" placeholder="510-123-1234">
             </div>
             <hr>
             <h3>ANIMAL DESCRIPTION</h3>
-
+            <p>Image Upload</p>
             <div class="form-group">
-                <p>Animal Name</p>
-                <input id="animal_name" type="text" class="form-control" placeholder="examples: Ruby, Max">
+                <input id="photo" type="text" class="form-control" placeholder="Link to Pet Photo (Required)">
             </div>
             <div class="form-group">
-                <p>Animal Species</p>
-                <input id="species" type="text" class="form-control" placeholder="Animal Species">
+                <p>Pet Name</p>
+                <input id="pet-name" type="text" class="form-control" placeholder="examples: Ruby, Max">
             </div>
-            <p>Breed</p>
             <div class="form-group">
-                <input id="breed" type="text" class="form-control" placeholder="examples: Corgi, Kai Ken">
+                <p>Pet Type</p>
+                <input id="pet-type" type="text" class="form-control" placeholder="Animal Species">
             </div>
-            <p>Predominant Color(s)</p>
+            <p>Pet Color(s)</p>
             <div class="form-group">
-                <input id="color" type="text" class="form-control" placeholder="Black">
+                <input id="pet-color" type="text" class="form-control" placeholder="Black">
             </div>
-            <p>Identifying Markings and Features</p>
+            <p>Pet Descritption</p>
             <div class="form-group">
-                <input id="features" type="text" class="form-control"
+                <input id="pet-description" type="text" class="form-control"
                     placeholder="examples: spayed/neutered, micro-chipped, declawed">
             </div>
-            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">
+            <button name="submit" type="submit" id="report-lost-form" data-submit="...Sending">
                 SUBMIT
             </button>
             <p id='response'></p>
@@ -61,6 +61,7 @@
         <div class="four"> </div>
         <div class="five"> </div>
     </div>
-    <script src="/reportLostLogic.js"></script>
 </body>
+<script src="/reportLostLogic.js"></script>
+
 </html>
