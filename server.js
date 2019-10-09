@@ -13,8 +13,8 @@ app.use(express.static(__dirname + "/app/images"));
 
 
 
-// require("./app/controller/apiRoutes.js")(app);
-require("./app/controller/htmlRoutes.js")(app)
+require("./app/controller/apiRoutes.js")(app);
+require("./app/controller/htmlRoutes.js")(app);
 
 app.listen(port,function(){
     console.log(`Connect to http://localhost:${port}`)

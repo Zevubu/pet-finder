@@ -119,13 +119,17 @@ p {
 }
 
 #name,
-#email,
-#phone,
-#animal_name,
-#breed,
-#color,
-#features,
-#species,
+#user-email,
+#user-phone,
+#photo,
+#pet-name,
+#pet-type,
+#pet-color,
+#pet-description,
+#address,
+#city,
+#state,
+#zip,
 #text-input {
     display: grid;
     grid-column: 1/5;
@@ -143,13 +147,17 @@ p {
 }
 
 #name,
-#email,
-#phone,
-#animal_name,
-#breed,
-#color,
-#features,
-#species {
+#user-email,
+#user-phone,
+#photo,
+#pet-name,
+#pet-type,
+#pet-color,
+#address,
+#city,
+#state,
+#zip,
+#pet-description {
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -173,7 +181,7 @@ p {
     margin-left: 30px;
 }
 
-#contact-submit:hover {
+#report-lost-form:hover {
     background-color: turquoise;
     border: 1px solid white;
     color: black;
@@ -182,9 +190,9 @@ p {
     transform: scale(1.08);
 }
 
-#contact-submit {
+#report-lost-form {
     display: grid;
-    font-size: 24px;
+    font-size: 1.5vw;
     color: white;
     background-color: darkgrey;
     border: 1px solid darkgrey;
@@ -198,7 +206,6 @@ p {
     letter-spacing: .1em;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 18px;
     transition: transform .5s ease;
 }
 
