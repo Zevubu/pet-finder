@@ -6,10 +6,84 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./reportlost.css">
 </head>
 <body>
-    <h1>Report Found Form</h1>
+    
+    <div class='background' id="content">
+        <div class="one">
+        </div>
+        <div class="two"></div>
+        <div class="three">
 
+            <br>
+            <h3>CONTACT INFO</h3>
+            <div class="form-group">
+                <p>Full Name</p>
+                <input id="user-name" type="text" class="form-control" placeholder="Jane Doe">
+            </div>
+            <div class="form-group">
+                <p>Email</p>
+                <input id="user-email" type="text" class="form-control" placeholder="janedoe@gmail.com">
+            </div>
+            <div class="form-group">
+                <p>Phone</p>
+                <input id="user-phone" type="text" class="form-control" placeholder="510-123-1234">
+            </div>
+
+            <div class="form-group">
+                <p>Address</p>
+                <input id="user-address" type="text" class="form-control" placeholder="2691 Benvenue Avenue">
+            </div>
+
+            <div class="form-group">
+                <p>City</p>
+                <input id="user-city" type="text" class="form-control" placeholder="Berkeley">
+            </div>
+
+            <div class="form-group">
+                <p>State</p>
+                <input id="user-state" type="text" class="form-control" placeholder="California">
+            </div>
+
+            <div class="form-group">
+                    <p>Zip</p>
+                    <input id="user-zip" type="text" class="form-control" placeholder="94705">
+                </div>
+
+            <hr>
+            <h3>ANIMAL DESCRIPTION</h3>
+            <p>Image link</p>
+            <div class="form-group">
+                <input id="pet-photo" type="text" class="form-control" placeholder="Link to Pet Photo (Required)">
+            </div>
+            <div class="form-group">
+                <p>Pet Name</p>
+                <input id="pet-name" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <p>Pet Type</p>
+                <input id="pet-type" type="text" class="form-control" placeholder="Examples: Cat,Dog">
+            </div>
+            <p>Pet Color(s)</p>
+            <div class="form-group">
+                <input id="pet-color" type="text" class="form-control" placeholder="Black">
+            </div>
+            <p>Pet Description</p>
+            <div class="form-group">
+                <textarea rows="4" cols="50" id="pet-description" type="text" class="form-control"
+                    placeholder="examples: spayed/neutered, micro-chipped, declawed"></textarea>
+            </div>
+            <button class="btn btn-primary" name="submit" type="submit" id="report-found-form" data-submit="...Sending">
+                SUBMIT
+            </button>
+            <p id='response'></p>
+        </div>
+        <div class="four"> </div>
+        <div class="five"> </div>
+    </div>
     <script src="/reportFoundLogic.js"></script>
 </body>
 </html>
