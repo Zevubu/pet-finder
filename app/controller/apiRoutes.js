@@ -20,7 +20,7 @@ module.exports = function (app) {
     })
 
     app.post("/api/lost", function(req, res) {
-        console.log(req.body)
+       
 
         model.addLost("lost", [req.body.userName, req.body.userEmail, req.body.userPhone,
         req.body.userAddress, req.body.userCity, req.body.userZip, req.body.petPhoto,
@@ -33,7 +33,7 @@ module.exports = function (app) {
 
 
     app.post("/api/found", function(req, res) {
-        console.log(req.body)
+        
 
         model.addFound("found", [req.body.userName, req.body.userEmail, req.body.userPhone,
             req.body.userAddress, req.body.userCity, req.body.userZip, req.body.petPhoto,
