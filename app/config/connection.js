@@ -1,11 +1,10 @@
-let mysql = require("mysql")
+let mysql = require("mysql");
 
 let connection = mysql.createConnection({
     host:"localhost",
     user:"root",
     port: 3306,
-    // password: "Anamel!keth!s",
-    password: "SS7affnd7M@",
+    password: "SampleTest",
     database: "petFinder_db"
 })
 

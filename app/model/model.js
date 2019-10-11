@@ -38,15 +38,16 @@ addLost : function(table,vals,cb){
 },
 
 addFound : function(table,vals,cb){
-
-    let queryURL = `INSERT INTO ${table} (pet_name, pet_type, pet_color, pet_description, pet_photo, user_email, user_phone, longitude, lattitude) VALUES(?,?,?,?,?,?,?,?,?);`
+    
+    let queryURL = `INSERT INTO ${table} (user_name, user_email, user_phone, user_address, user_city, user_zip, pet_photo, pet_name, pet_color, pet_description) VALUES(?,?,?,?,?,?,?,?,?,?);`
 
     connection.query(queryURL,vals,function(err,data){
-        if(err) throw err;
+        if(err) console.log(err)
+        
         cb(data)
 
     })
-
+  
 }
 
 

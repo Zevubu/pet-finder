@@ -1,5 +1,4 @@
 // Fred's New Code
-// Test
 
 // Defining target variables
 
@@ -19,6 +18,7 @@ let submitBtn = document.getElementById("report-lost-form")
 
 // Event listener to construct object from form with validation
 submitBtn.addEventListener("click", function () {
+
   event.preventDefault();
 
   let valid = true
@@ -32,7 +32,7 @@ submitBtn.addEventListener("click", function () {
     (userState.value == "") ||
     (userZip.value == "") ||
     (petPhoto.value == "") ||
-    (petName.value = "") ||
+    (petName.value == "") ||
     (petType.value == "") ||
     (petColor.value == "") ||
     (petDescription.value == "")
