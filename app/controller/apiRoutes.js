@@ -23,7 +23,7 @@ module.exports = function (app) {
        
 
         model.addLost("lost", [req.body.userName, req.body.userEmail, req.body.userPhone,
-        req.body.userAddress, req.body.userCity, req.body.userZip, req.body.petPhoto,
+        req.body.userAddress, req.body.userCity, req.body.userState, req.body.userZip, req.body.petPhoto,
         req.body.petName, req.body.petType, req.body.petColor, req.body.petDescription],
             function(data) {
                 res.json(data)
@@ -36,7 +36,7 @@ module.exports = function (app) {
         
 
         model.addFound("found", [req.body.userName, req.body.userEmail, req.body.userPhone,
-            req.body.userAddress, req.body.userCity, req.body.userZip, req.body.petPhoto,
+            req.body.userAddress, req.body.userCity, req.body.userState, req.body.userZip, req.body.petPhoto,
             req.body.petName, req.body.petType, req.body.petColor, req.body.petDescription],
             function(data) {
                 res.json(data)
