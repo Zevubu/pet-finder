@@ -20,9 +20,9 @@ Frederick: Mysql server
 
 Zev: map quest
 
-Jeremy: form and front end
+Jeremy: forms and front end
 
-Farkhod
+Farkhod: home page layout.
 
 
 Additional ideas:
