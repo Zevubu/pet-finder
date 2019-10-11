@@ -13,7 +13,7 @@ body {
 /* WRAPPER OF ALL CONTAINERS */
 .wrapper-containers {
     display: grid;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
 }
 
 .con-header {
@@ -33,6 +33,51 @@ body {
 .con-header span::first-letter {
     color: black;
 }
+
+/* ADS CONTAINER */
+.con-ads {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.con-ads section {
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.con-ads section img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+}
+
+/* .con-ads section:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+} */
+
+
+.con-ads img {
+    height: 300px;
+    width: 100%;
+}
+
+.mission h1 {
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: olivedrab;
+    text-align: center;
+}
+
+.mission p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color: grey;
+    text-align: center;
+}
+
+
 
 /* NAVIGATION BAR CONTAINER  */
 .con-nav {
@@ -56,10 +101,29 @@ body {
     color: #ffffff;
 }
 
-/* ADS CONTAINER  */
 
 /* CONTENT CONTAINER  */
+
+/* DEVELOPERS CONTAINERS  */
+.con-developers {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+.con-developers section {
+    width: 300px;
+    height: 300px;
+}
+
 
 
 
 /* FOOTER CONTAINER  */
+/* .con-footer {
+    display: grid;
+    grid-template-rows: auto;
+    justify-content: center;
+  
+    background-color: hsl(170, 77%, 14%);
+    color: azure;
+    padding: 70px;
+  } */
