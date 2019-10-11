@@ -9,7 +9,9 @@ fetch("/api/lost").then(function(response){
 
         let newDiv = document.createElement("div")
         let petName = document.createElement("h1")
-        let petPhoto = document.createElement("h2")
+        let petPhoto = document.createElement("img");
+        petPhoto.setAttribute('src', `${data[i].pet_photo}`);
+        petPhoto.setAttribute(`width`, "400");
         let petColor = document.createElement("h2")
         let petDescription = document.createElement("h2")
         let userName = document.createElement("h3")
@@ -21,7 +23,7 @@ fetch("/api/lost").then(function(response){
         let hr = document.createElement("hr")
 
         petName.textContent = `Pet Name : ${data[i].pet_name}`
-        petPhoto.textContent = `Pet Photo : ${data[i].pet_photo}`
+        // petPhoto.textContent = `Pet Photo : ${data[i].pet_photo}`
         petColor.textContent = `Pet Color : ${data[i].pet_color}`
         petDescription.textContent = `Pet Description : ${data[i].pet_description}`
         userName.textContent = `Founder Name : ${data[i].user_name}`
