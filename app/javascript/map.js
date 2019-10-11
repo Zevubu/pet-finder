@@ -48,17 +48,19 @@ fetch("/api/lost").then(function(response){
     return response.json()
 }).then(function(data){
     for (let i = 0; i < data.length; i++){
-        console.log(data[i])
-        petInfo.push(data[i])
-    }
+        data[i].LorF = "Lost";
+        console.log(data[i]);
+        petInfo.push(data[i]);
+    };
 }).then(function(){
     fetch("/api/found").then(function(res){
         return res.json()
     }).then(function(dat){
         for(i = 0 ; i < dat.length; i++){
+            dat[i].LorF = "Found";
             console.log(dat[i]);
             petInfo.push(dat[i]);
-        }
+        };
     }).then(function(){
         let pinLocations = []
 
@@ -77,30 +79,30 @@ fetch("/api/lost").then(function(response){
                 console.log(error);
             };
             // Initialize the Map
-            var map = L.mapquest.map('map', {
+            let map = L.mapquest.map('map', {
             layers: L.mapquest.tileLayer('map'),
             center: [0, 0],
             zoom: 12
             });
 
             // Generate the feature group containing markers from the geocoded locations
-            var featureGroup = generateMarkersFeatureGroup(response);
+            let featureGroup = generateMarkersFeatureGroup(response);
 
             // Add markers to the map and zoom to the features
             featureGroup.addTo(map);
             map.fitBounds(featureGroup.getBounds());
-        }
+        };
 
         function generateMarkersFeatureGroup(response) {
-            var group = [];
-            for (var i = 0; i < response.results.length; i++) {
-                var location = response.results[i].locations[0];
-                var locationLatLng = location.latLng;
+            let group = [];
+            for (let i = 0; i < response.results.length; i++) {
+                let location = response.results[i].locations[0];
+                let locationLatLng = location.latLng;
                 pet = petInfo[i]; 
 
                 // Create a marker for each location
-                var marker = L.marker(locationLatLng, {icon: L.mapquest.icons.marker()})
-                .bindPopup(`<img src="${pet.pet_photo}" alt="lost pet" width="150px"> ${pet.pet_name}, ${pet.pet_color}, ${pet.pet_description}\n ${pet.user_name}, ${pet.user_email}, ${pet.user_phone} \n ${pet.user_address}, ${pet.user_city}, ${pet.user_state}`);
+                let marker = L.marker(locationLatLng, {icon: L.mapquest.icons.marker()})
+                .bindPopup(`<h2>${pet.LorF}</h2><img src="${pet.pet_photo}" alt="${pet.LorF} pet img area" width="225px"> <p>Pet info: ${pet.pet_name}, ${pet.pet_color}, ${pet.pet_description}</p> <p>Contact ${pet.user_name} at: ${pet.user_email}, ${pet.user_phone}</p> <p>${pet.LorF} near: ${pet.user_address}, ${pet.user_city}, ${pet.user_state}</p>`);
                     console.log(location.adminArea5 + ', ' + location.adminArea3 + i)
 
                 group.push(marker);
