@@ -26,7 +26,7 @@ CREATE TABLE found
 	user_name varchar(50) NOT NULL,
     user_email varchar(50) NOT NULL,
 	user_phone varchar (50) NOT NULL,
-    user_address varchar (250), NOT NULL,
+    user_address varchar (250) NOT NULL,
 	user_city varchar(250) NOT NULL,
     user_state varchar(250) NOT NULL,
 	user_zip varchar (250) NOT NULL,
