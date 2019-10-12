@@ -15,6 +15,7 @@ CREATE TABLE lost
 	user_zip varchar (250) NOT NULL,
 	pet_photo varchar (250) NOT NULL,
 	pet_name varchar (250) NOT NULL,
+	pet_type varchar (250) NOT NULL,
 	pet_color varchar (250) NOT NULL,
 	pet_description varchar (250) NOT NULL,
 	PRIMARY KEY (id)
@@ -32,6 +33,7 @@ CREATE TABLE found
 	user_zip varchar (250) NOT NULL,
 	pet_photo varchar (250) NOT NULL,
 	pet_name varchar (250) NOT NULL,
+	pet_type varchar (250) NOT NULL,
 	pet_color varchar (250) NOT NULL,
 	pet_description varchar (250) NOT NULL,
 	PRIMARY KEY (id)
