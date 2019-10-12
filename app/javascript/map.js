@@ -84,6 +84,8 @@ fetch("/api/lost").then(function(response){
             center: [0, 0],
             zoom: 12
             });
+            L.mapquest.control().addTo(map);
+            L.mapquest.geocodingControl().addTo(map);
 
             // Generate the feature group containing markers from the geocoded locations
             let featureGroup = generateMarkersFeatureGroup(response);
