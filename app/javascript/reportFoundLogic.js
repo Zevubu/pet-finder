@@ -88,7 +88,8 @@ submitBtn.addEventListener("click", function () {
       let latLng = JSON.stringify(location.displayLatLng); 
       newFound.petLatLng = latLng;
       console.log(newFound);
-      setTimeout(createPost, 5000) ;
+      // setTimeout(, 5000)
+        createPost() ;
     }
     
   }
