@@ -18,6 +18,7 @@ CREATE TABLE lost
 	pet_type varchar (250) NOT NULL,
 	pet_color varchar (250) NOT NULL,
 	pet_description varchar (250) NOT NULL,
+	pet-latlng varchar (250) NOT NULL,
 	PRIMARY KEY (id)
 );
 
@@ -36,6 +37,7 @@ CREATE TABLE found
 	pet_type varchar (250) NOT NULL,
 	pet_color varchar (250) NOT NULL,
 	pet_description varchar (250) NOT NULL,
+	pet-latlng varchar (250) NOT NULL,
 	PRIMARY KEY (id)
 );
 

@@ -15,10 +15,9 @@ let petType = document.getElementById("pet-type")
 let petColor = document.getElementById("pet-color")
 let petDescription = document.getElementById("pet-description")
 let submitBtn = document.getElementById("report-lost-form")
-
+L.mapquest.key = mqKey;
 // Event listener to construct object from form with validation
 submitBtn.addEventListener("click", function () {
-
   event.preventDefault();
 
   let valid = true
@@ -41,7 +40,7 @@ submitBtn.addEventListener("click", function () {
     valid = false
   }
 
-// Make post if valid
+  // Make post if valid
   if (valid) {
 
     
@@ -59,33 +58,44 @@ submitBtn.addEventListener("click", function () {
       petType: petType.value.trim(),
       petColor: petColor.value.trim(),
       petDescription: petDescription.value.trim(),
-
     }
-    console.log(newLost)
+    function createPost(){ 
+      console.log(newLost)
+      postRequest('/api/lost', newLost)
+      .then(function(data){
+      console.log(data)
+      })
 
-    postRequest('/api/lost', newLost)
-    .then(function(data){
-     console.log(data)
-    })
-
-    function postRequest(url, data) {
-        return fetch(url, {
-          credentials: 'same-origin', // 'include', default: 'omit'
-          method: 'POST', // 'GET', 'PUT', 'DELETE', etc.
-          body: JSON.stringify(data), // Coordinate the body type with 'Content-Type'
-          headers: new Headers({
-            'Content-Type': 'application/json'
-          }),
-        })
-        .then(response => response.json())
+      function postRequest(url, data) {
+          return fetch(url, {
+            credentials: 'same-origin', // 'include', default: 'omit'
+            method: 'POST', // 'GET', 'PUT', 'DELETE', etc.
+            body: JSON.stringify(data), // Coordinate the body type with 'Content-Type'
+            headers: new Headers({
+              'Content-Type': 'application/json'
+            }),
+          })
+          .then(response => response.json())
       }
+    };
 
+    let petAddress = `${newLost.userAddress}, ${newLost.userCity}, ${newLost.userState}, ${newLost.userZip}`
+    L.mapquest.geocoding().geocode(petAddress, createLatLng);
+
+    function createLatLng(error, response) {
+      let location = response.results[0].locations[0];
+      let latLng = JSON.stringify(location.displayLatLng); 
+      newLost.petLatLng = latLng;
+      console.log(newLost);
+      setTimeout(createPost, 5000) ;
+    }
+    
   }
-
   else {
-    alert("Fill valid fields")
+    alert("Fill valid fields");
+    return;
   }
-
+ 
 })
 
 

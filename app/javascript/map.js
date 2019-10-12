@@ -60,7 +60,7 @@ fetch("/api/lost").then(function(response){
             dat[i].LorF = "Found";
             console.log(dat[i]);
             petInfo.push(dat[i]);
-        };
+        }
     }).then(function(){
         let pinLocations = []
 
