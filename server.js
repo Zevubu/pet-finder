@@ -2,7 +2,7 @@ let port = 5050
 let express = require("express")
 let app = express()
 
-// let connection = require("./app/config/connection.js")
+let connection = require("./app/config/connection.js")
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

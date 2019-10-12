@@ -51,6 +51,7 @@ submitBtn.addEventListener("click", function () {
       userPhone: userPhone.value.trim(),
       userAddress: userAddress.value.trim(),
       userCity: userCity.value.trim(),
+      userState: userState.value.trim(),
       userZip: userZip.value.trim(),
       petPhoto: petPhoto.value.trim(),
       petName: petName.value.trim(),
