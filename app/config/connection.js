@@ -4,7 +4,8 @@ let connection = mysql.createConnection({
     host:"localhost",
     user:"root",
     port: 3306,
-    password: "PASSWORDHERE",
+    password: "Anamel!keth!s",
+    // password: "PASSWORDHERE",
     database: "petFinder_db"
 })
 

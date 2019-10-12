@@ -104,7 +104,7 @@ fetch("/api/lost").then(function(response){
 
                 // Create a marker for each location
                 let marker = L.marker(locationLatLng, {icon: L.mapquest.icons.marker()})
-                .bindPopup(`<h2>${pet.LorF}</h2><img src="${pet.pet_photo}" alt="${pet.LorF} pet img area" width="250px"> <p>Pet info: ${pet.pet_name}, ${pet.pet_color}, ${pet.pet_description}</p> <p>Contact ${pet.user_name} at: ${pet.user_email}, ${pet.user_phone}</p> <p>${pet.LorF} near: ${pet.user_address}, ${pet.user_city}, ${pet.user_state}</p>`);
+                .bindPopup(`<h2>${pet.LorF}</h2><img src="${pet.pet_photo}" alt="${pet.LorF} pet img area" width="250px"> <p>Pet info: ${pet.pet_name} is a ${pet.pet_color}, ${pet.pet_type}. Description: ${pet.pet_description}</p> <p>Contact ${pet.user_name} at: ${pet.user_email}, ${pet.user_phone}</p> <p>${pet.LorF} near: ${pet.user_address}, ${pet.user_city}, ${pet.user_state}</p>`);
                     console.log(location.adminArea5 + ', ' + location.adminArea3 + i)
 
                 group.push(marker);
