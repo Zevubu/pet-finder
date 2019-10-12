@@ -181,7 +181,7 @@ p {
     margin-left: 30px;
 }
 
-#report-lost-form:hover {
+#report-lost-form:hover, #report-found-form:hover {
     background-color: turquoise;
     border: 1px solid white;
     color: black;
@@ -190,7 +190,7 @@ p {
     transform: scale(1.08);
 }
 
-#report-lost-form {
+#report-lost-form, #report-found-form {
     display: grid;
     font-size: 1.5vw;
     color: white;

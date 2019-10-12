@@ -1,0 +1,30 @@
+#pet-container-display {
+    margin: 50px auto;
+    background-color: #97CC97;
+    width: 80%;
+    
+}
+
+#pet-info {
+    display : grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    text-align: center;
+    align-items: center;
+
+}
+
+#pet-info img {
+  max-width: 100%;
+}
+
+#user-info {
+    display : grid;
+    grid-template-columns : 1fr 1fr;
+    grid-template-rows : 1fr;
+    justify-items: center;
+    text-align: center;
+
+}
+
