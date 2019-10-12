@@ -12,6 +12,7 @@ fetch("/api/found").then(function(response){
         let petPhoto = document.createElement("img");
         petPhoto.setAttribute('src', `${data[i].pet_photo}`);
         petPhoto.setAttribute(`width`, "400");
+        let petType = document.createElement("h2");
         let petColor = document.createElement("h2");
         let petDescription = document.createElement("h2");
         let userName = document.createElement("h3");
@@ -24,6 +25,7 @@ fetch("/api/found").then(function(response){
 
         petName.textContent = `Pet Name : ${data[i].pet_name}`
         // petPhoto.textContent = `Pet Photo : ${data[i].pet_photo}`
+        petType.textContent = `Pet Type : ${data[i].pet_type}`
         petColor.textContent = `Pet Color : ${data[i].pet_color}`
         petDescription.textContent = `Pet Description : ${data[i].pet_description}`
         userName.textContent = `Founder Name : ${data[i].user_name}`
