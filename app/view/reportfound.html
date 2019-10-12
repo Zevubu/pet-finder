@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./reportlost.css">
+   
 </head>
 
 <body>
@@ -110,14 +111,16 @@
                 <textarea rows="4" cols="50" id="pet-description" type="text" class="form-control"
                     placeholder="examples: spayed/neutered, micro-chipped, declawed"></textarea>
             </div>
-            <button name="submit" type="submit" id="report-lost-form" data-submit="...Sending">
+            <button name="submit" type="submit" id="report-found-form" data-submit="...Sending">
                     SUBMIT
                 </button>
             <p id='response'></p>
         </div>
         <div class="four"> </div>
         <div class="five"> </div>
-    </div>
+    </div> 
+    <script type="text/javascript" src="/keys.js"></script>
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
     <script src="/reportFoundLogic.js"></script>
 </body>
 
