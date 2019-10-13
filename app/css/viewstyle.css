@@ -2,7 +2,17 @@
     margin: 50px auto;
     background-color: #97CC97;
     width: 80%;
+    border-radius: 10px;
+    border-style: groove;
+    padding: 10px;
     
+}
+
+#pet-header, #user-header {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    text-align: center;
 }
 
 #pet-info {
@@ -15,8 +25,13 @@
 
 }
 
+h1 {
+    font-size: 48px;
+}
+
 #pet-info img {
-  max-width: 100%;
+  width: 100%;
+  border-radius: 25px;
 }
 
 #user-info {

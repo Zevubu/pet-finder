@@ -12,6 +12,13 @@ fetch("/api/found").then(function(response){
         let newDiv = document.createElement("div")
         newDiv.setAttribute("id","pet-container-display")
 
+        let petHeaderDiv = document.createElement("div")
+        petHeaderDiv.setAttribute("id","pet-header")
+        let petHeader = document.createElement("h1")
+        petHeader.textContent ="Pet Information"
+
+        petHeaderDiv.appendChild(petHeader)
+
         // Child div to be appended to parent div
         let petDiv = document.createElement("div")
         petDiv.setAttribute("id","pet-info")
@@ -30,16 +37,18 @@ fetch("/api/found").then(function(response){
         petInfo.setAttribute("id","pet-ntcd")
 
         // Adding content to pet info div
+
         let petName = document.createElement("h2")
         petName.textContent = `Pet Name : ${data[i].pet_name}`
         let petType = document.createElement("h2")
         petType.textContent = `Pet Type : ${data[i].pet_type}`
         let petColor = document.createElement("h2")
         petColor.textContent = `Pet Color : ${data[i].pet_color}`
-        let petDescription = document.createElement("p")
+        let petDescription = document.createElement("h2")
         petDescription.textContent = `Pet Description : ${data[i].pet_description}`
 
         // Appending to pet Info
+    
         petInfo.appendChild(petName)
         petInfo.appendChild(petType)
         petInfo.appendChild(petColor)
@@ -53,6 +62,12 @@ fetch("/api/found").then(function(response){
         let userDiv = document.createElement("div")
         userDiv.setAttribute("id","user-info")
 
+        let userPersonalDiv = document.createElement("div")
+        userPersonalDiv.id = "user-header"
+        let userPersonalHeader = document.createElement("h1")
+        userPersonalHeader.textContent = `Personal Information`
+        userPersonalDiv.appendChild(userPersonalHeader)
+
         // Will contain first div
         let userNep = document.createElement("div")
 
@@ -63,6 +78,7 @@ fetch("/api/found").then(function(response){
         let userPhone = document.createElement("h2")
         userPhone.textContent = `Founder Phone : ${data[i].user_phone}`
 
+        
         userNep.appendChild(userName)
         userNep.appendChild(userEmail)
         userNep.appendChild(userPhone)
@@ -86,8 +102,9 @@ fetch("/api/found").then(function(response){
         userDiv.appendChild(userLocation)
 
 
-
+        newDiv.appendChild(petHeaderDiv)
         newDiv.appendChild(petDiv)
+        newDiv.appendChild(userPersonalDiv)
         newDiv.appendChild(userDiv)
 
         wrapper.appendChild(newDiv)
