@@ -56,11 +56,6 @@
 
         <!--  CONTENT CONTAINER - THE MAP APP GOES HERE -->
         <section class="con-content">
-
-            <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
-            <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
-            <script type="text/javascript" src="/map.js"></script>
-
             <!-- <script type="text/javascript">
                 window.onload = function () {
                     L.mapquest.key = mqKey;
@@ -69,7 +64,7 @@
             </script> -->
 
             <div id="map" style="width: 98%; height: 530px;"></div>
-            <div id="info"></div>
+            <!-- <div id="info"></div> -->
 
         </section>
 
@@ -123,6 +118,12 @@
 
   
     <script src="/homeLogic.js"></script>
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+    <script src="https://unpkg.com/leaflet.markercluster@1.0.6/dist/leaflet.markercluster.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.6/dist/MarkerCluster.css"/>
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.6/dist/MarkerCluster.Default.css"/>
+    <script type="text/javascript" src="/map.js"></script>
 </body>
 
 </html>
