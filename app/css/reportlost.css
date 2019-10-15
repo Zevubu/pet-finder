@@ -17,6 +17,8 @@ h3 {
 
 .form-control {
     color: darkgray;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 p {
@@ -32,6 +34,7 @@ p {
     max-width: 100%;
     min-width: 360px;
     margin: 0 auto;
+    
     
 
 }
@@ -50,7 +53,7 @@ p {
     grid-row: 2/9;
     border-radius: 5px;
     background-color: whitesmoke;
-    padding: 50px;
+    padding: 20px;
     box-shadow: -12px 12px 2px 1px rgba(30, 30, 31, 0.2);
     border: 1px solid lightgray;
 }
@@ -75,6 +78,7 @@ p {
     min-width: 360px;
     max-height: 100%;
     margin: 0 auto;
+    
 }
 
 #contact_content div {
@@ -118,29 +122,30 @@ p {
     margin-bottom: 10px;
 }
 
-#name,
+#user-name,
 #user-email,
 #user-phone,
-#photo,
+#pet-photo,
 #pet-name,
 #pet-type,
 #pet-color,
 #pet-description,
-#address,
-#city,
-#state,
-#zip,
+#user-address,
+#user-city,
+#user-state,
+#user-zip,
 #text-input {
     display: grid;
     grid-column: 1/5;
     justify-self: center;
     margin: 0 auto;
-    font-size: 14px;
-    height: 35px;
+    font-size: 16px;
+    padding: 5px;
+    height: 45px;
     width: 100%;
     border-radius: 5px;
     border: none;
-    color: darkgrey;
+    color: black;
     background-color: white;
     margin: 0 auto;
     max-height: 200px;

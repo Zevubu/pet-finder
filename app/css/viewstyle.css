@@ -1,45 +1,54 @@
 #pet-container-display {
     margin: 50px auto;
-    background-color: #97CC97;
-    width: 80%;
+    width: 60%;
     border-radius: 10px;
-    border-style: groove;
-    padding: 10px;
+    background-color:aliceblue;
+    padding: 5px 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 1px solid lightgray;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.0vw;
     
 }
-
-#pet-header, #user-header {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+#pet-header,#user-header {
     text-align: center;
+    font-size: 24px;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 20px;
 }
-
 #pet-info {
     display : grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     justify-items: center;
-    text-align: center;
+    text-align: left;
     align-items: center;
+    grid-gap:10px;
 
-}
-
-h1 {
-    font-size: 48px;
 }
 
 #pet-info img {
-  width: 100%;
-  border-radius: 25px;
+  max-width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 #user-info {
     display : grid;
+    grid-gap:30px;
     grid-template-columns : 1fr 1fr;
     grid-template-rows : 1fr;
     justify-items: center;
-    text-align: center;
+    text-align: left;
+    opacity: .8;
+    border-start-end-radius: 5px;
+    margin-top:10px;
+}
+
+#data-span {
+    color: #6B8E23;
 
 }
+
 

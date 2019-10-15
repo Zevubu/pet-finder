@@ -60,6 +60,21 @@ submitBtn.addEventListener("click", function () {
       petDescription: petDescription.value.trim()
     };
 
+    function reset(){
+      userName.value = '';
+      userEmail.value = '';
+      userPhone.value = '';
+      userAddress.value = '';
+      userCity.value = '';
+      userState.value = '';
+      userZip.value = '';
+      petPhoto.value = '';
+      petName.value = '';
+      petType.value = '';
+      petColor.value = '';
+      petDescription.value = '';
+    }
+
     function createPost(){ 
       console.log(newFound)
       postRequest('/api/found', newFound)
@@ -90,6 +105,7 @@ submitBtn.addEventListener("click", function () {
       console.log(newFound);
       // setTimeout(, 5000)
         createPost() ;
+        reset();
     }
     
   }
