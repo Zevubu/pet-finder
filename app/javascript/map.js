@@ -2,6 +2,7 @@ L.mapquest.key = mqKey;
 let baseLayer = L.mapquest.tileLayer('map');
 let petInfo = []
 
+
 fetch("/api/lost").then(function(response){
     return response.json()
 }).then(function(data){
@@ -39,8 +40,8 @@ fetch("/api/lost").then(function(response){
             // Initialize the Map
             let map = L.mapquest.map('map', {
             layers: L.mapquest.tileLayer('map'),
-            center: L.latLng(37.84997,-122.26045),
-            zoom: 8
+            center: L.latLng(addressPoints[addressPoints.length -1].lat, addressPoints[addressPoints.length -1].lng),
+            zoom: 9
             });
             let markers = L.markerClusterGroup();
 
@@ -48,10 +49,20 @@ fetch("/api/lost").then(function(response){
                 pet = petInfo[i];
                 let addressPoint = addressPoints[i];
                 let title =`<h2>${pet.LorF}</h2><img src="${pet.pet_photo}" alt="${pet.LorF} pet img area" width="250px"> <p>Pet info: ${pet.pet_name} is a ${pet.pet_color}, ${pet.pet_type}. Description: ${pet.pet_description}</p> <p>Contact ${pet.user_name} at: ${pet.user_email}, ${pet.user_phone}</p> <p>${pet.LorF} near: ${pet.user_address}, ${pet.user_city}, ${pet.user_state}</p>`;
+                if(pet.LorF === "Found"){
+                    var customIcon = L.mapquest.icons.circle({
+                    primaryColor: '#00BF5E'
+                    });
+                }else{
+                    var customIcon = L.mapquest.icons.circle({
+                        primaryColor: '#E2003E'
+                    });
+                }
                 let marker = L.marker(new L.LatLng(addressPoint.lat, addressPoint.lng), {
                 title: title,
-                icon: L.mapquest.icons.marker()
+                icon: customIcon
                 });
+
                 marker.bindPopup(title);
                 markers.addLayer(marker);
             }
