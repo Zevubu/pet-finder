@@ -15,7 +15,7 @@ let petType = document.getElementById("pet-type")
 let petColor = document.getElementById("pet-color")
 let petDescription = document.getElementById("pet-description")
 let submitBtn = document.getElementById("report-found-form")
-L.mapquest.key = mqKey;
+L.mapquest.key = "lqUrYs8W0tHm67hKexOoiDh3WUyo33RC";
 // Event listener to construct object from form with validation
 submitBtn.addEventListener("click", function () {
   event.preventDefault();
