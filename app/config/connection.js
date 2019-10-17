@@ -1,5 +1,4 @@
 require("dotenv").config();
-//Require mysql npm package to create a connection to the mysql database.
 var mysql = require("mysql");
 let keys = require('../../keys.js')
 
