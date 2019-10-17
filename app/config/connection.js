@@ -30,10 +30,16 @@ if (process.env.JAWSDB_URL) {
 
 
 
-connection.connect(function(err){
-    if(err)console.log(err)
-    console.log(`Connected to database`)
-})
+  connection.connect(function(err) {
+    //If there is an error when connecting to the database, log the error to the console.
+    if (err) {
+      console.error("error connecting: " + err.stack);
+      return;
+    }
+    //If a database connection is established, log the database thread number.
+    console.log("connected as id " + connection.threadId);
+  });
+  
 
 
 module.exports = connection
