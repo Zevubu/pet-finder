@@ -1,6 +1,10 @@
 // Fred's New Code
 
 // Defining target variables
+let keys= require("../../dbkeys.js")
+
+let mpw = keys.password.mappw
+
 
 let userName = document.getElementById("user-name")
 let userEmail = document.getElementById("user-email")
@@ -15,7 +19,7 @@ let petType = document.getElementById("pet-type")
 let petColor = document.getElementById("pet-color")
 let petDescription = document.getElementById("pet-description")
 let submitBtn = document.getElementById("report-found-form")
-L.mapquest.key = mqKey;
+L.mapquest.key = mpw;
 // Event listener to construct object from form with validation
 submitBtn.addEventListener("click", function () {
   event.preventDefault();

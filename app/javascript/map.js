@@ -1,4 +1,8 @@
-L.mapquest.key = mqKey;
+let keys= require("../../dbkeys.js")
+
+let mpw = keys.password.mappw
+
+L.mapquest.key = mpw;
 let baseLayer = L.mapquest.tileLayer('map');
 let petInfo = []
 
