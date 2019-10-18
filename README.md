@@ -1,5 +1,4 @@
 # Lost & Hound
-An application that matches you with an Archer character after filling out a survey.
 
 ## Table of Contents 
 
