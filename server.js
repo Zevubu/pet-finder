@@ -1,4 +1,4 @@
-let port = 5050
+let port = process.env.PORT || 5050
 let express = require("express")
 let app = express()
 

@@ -1,44 +1,46 @@
-# pet-finder
-A page to help people find there lost animals..
+# Lost & Hound
 
-Lost your dog your cat your pet lemur. Use pet finder(working name) to post a missing add. Or a found add. Pet-finder shows all the lost and found animals in your surroundings on a map.
+## Table of Contents 
 
-Jeremy Gilbert
-Farkhod Isoev
-Frederick Saba
-Zev Hoffman
+## Live Link 
+https://cryptic-gorge-70462.herokuapp.com/
 
-Html %
-Css - grid
-Js - validation
-Node-Express
-Mysql-Jawsdb
-Mapquest : geo-code to turn address into lad and lon. reverse geocode to turn lad and lon to  get address of pin.
-https://www.npmjs.com/package/geolocator
+## Objective 
 
-Frederick: Mysql server
+Created an application that helps people connect with their lost pets.
 
-Zev: map quest
+## Code Structure
 
-Jeremy: forms and front end
+Utilized the MVC architecture.  Seperate JavaScript files were included to support the major feature for the map.
 
-Farkhod: home page layout.
+### Technologies
+Front-End
+- [ ] HTML5
+- [ ] CSS3-Grid
+- [ ] JavaScript
 
+Back-End
+- [ ] Express.js
+- [ ] Node.js
+- [ ] MySQL
+- [ ] NPM Packages
+- [ ] MapQuest API
 
-Additional ideas:
+### Setup 
+```
+1. git clone https://github.com/Zevubu/pet-finder
+2. cd pet-finder in your terminal
+3. npm install
+4. Modify credentials in connection.js
+5. node server.js
+6. Go to http://localhost:5050 or another port if you modified the code
 
-Animals up for adoption 
-Message board
+```
+### Requirements
+```
+1. MySQL Database
+2. MapQuest API Key
 
-Js:
-    Validation.
-    Data sent as an object
-
-A page that helps you find your lost animals. 
-
-View missing animal near you on map 
-You can post a lost animal.
-And out can post a found animal
-
+```
 
 

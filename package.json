@@ -4,7 +4,6 @@
   "description": "A page to help people find there lost animals..",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": {
@@ -19,6 +18,7 @@
   },
   "homepage": "https://github.com/Zevubu/pet-finder#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mapquest": "^0.2.0",
