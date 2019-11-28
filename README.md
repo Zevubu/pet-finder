@@ -9,6 +9,10 @@ https://cryptic-gorge-70462.herokuapp.com/
 
 Created an application that helps people connect with their lost pets.
 
+
+## Screenshot
+![Screenshot](/ss/lostandhound.png)
+
 ## Code Structure
 
 Utilized the MVC architecture.  Seperate JavaScript files were included to support the major feature for the map.
